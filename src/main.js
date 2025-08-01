@@ -125,6 +125,18 @@ class App {
       console.log("🚀 Booster started!");
     });
 
+    const autoCollectBtn = document.getElementById('autoCollectorToggleBtn');
+    const autoCollectCountdown = document.getElementById('autoCollectorCountdown');
+
+    autoCollectCountdown.style.display = 'none';
+
+    autoCollectBtn.addEventListener('click', () => {
+      autoCollectBtn.style.display = 'none';
+      autoCollectCountdown.style.display = 'block';
+
+      console.log("🚀 Booster started!");
+    });
+
     // Bottom navigation
     document.querySelectorAll('.nav-item').forEach(item => {
       item.addEventListener('click', (e) => {

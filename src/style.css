@@ -1,6 +1,6 @@
 :root {
   --default-bg-moko: #fff2d1;
-  --primary-yellow: #FFD700;
+  --primary-yellow: #fcba63;
   --secondary-orange: #FF8C42;
   --accent-blue: #4A90E2;
   --background-cream: #FFF4E6;
@@ -93,7 +93,7 @@ body {
   font-weight: 700;
   color: var(--text-brown);
   box-shadow: var(--shadow);
-  border: 3px solid #DAA520;
+  border: 3px solid var(--default-bg-moko);
 }
 
 .stars-display {
@@ -107,7 +107,7 @@ body {
     font-weight: 700;
     color: var(--text-brown);
     box-shadow: var(--shadow);
-    border: 3px solid #DAA520;
+    border: 3px solid var(--default-bg-moko);
 }
 
 .star-icon {
@@ -296,7 +296,7 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
-  background: var(--reward-blue);
+  background-image: url('../public/bg.png');
   padding: 10px;
   border-radius: var(--border-radius);
   border: 3px solid #4A90E2;
@@ -395,16 +395,16 @@ body {
 
 /* Boosters Section */
 .booster-collector {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--tg-bg-color);
-    padding: 8px;
-    border-radius: var(--border-radius);
-    margin-bottom: 8px;
-    border: 2px solid #E6E6E6;
-    box-shadow: var(--shadow);
-    flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--tg-bg-color);
+  padding: 12px;
+  border-radius: var(--border-radius);
+  margin-bottom: 8px;
+  border: 2px solid #E6E6E6;
+  box-shadow: var(--shadow);
+  flex-shrink: 0;
 }
 
 #boosterCountdown {
@@ -465,7 +465,7 @@ body {
 .booster-text {
   position: absolute;
   bottom: -15px;
-  font-size: 10px;
+  font-size: 16px;
   font-weight: 600;
   color: white;
   background: rgba(0, 0, 0, 0.6);
@@ -475,7 +475,7 @@ body {
 
 .boosters-btn {
   width: 100%;
-  padding: 8px;
+  padding: 12px;
   background: var(--secondary-orange);
   color: white;
   border: none;
@@ -498,13 +498,18 @@ body {
   background: #D35400;
 }
 
+#autoCollectorToggleBtn {
+  background: var(--reward-blue);
+  border: 2px solid var(--reward-blue)
+}
+
 /* Auto Collector */
 .auto-collector {
   display: flex;
   align-items: center;
   gap: 8px;
   background: var(--tg-bg-color);
-  padding: 8px;
+  padding: 12px;
   border-radius: var(--border-radius);
   margin-bottom: 8px;
   border: 2px solid #E6E6E6;
@@ -544,7 +549,7 @@ body {
 }
 
 .collector-text {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 600;
   margin-bottom: 2px;
 }
@@ -553,7 +558,7 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .mini-progress-bar {
@@ -627,6 +632,7 @@ body {
   position: fixed;
   font-size: 14px;
   font-weight: 700;
+  padding: 3px;
   color: var(--tg-bg-color);
   background-color: var(--text-brown);
   pointer-events: none;
@@ -798,8 +804,8 @@ body {
   }
   
   .diamond {
-    width: 50px;
-    height: 50px;
+    width: 65px;
+    height: 65px;
   }
   
   .special-diamond {

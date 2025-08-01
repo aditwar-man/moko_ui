@@ -128,7 +128,7 @@
         <!-- Booster feature as auto-collector UI clone -->
         <div class="booster-collector">
           <button class="boosters-btn" id="boostersToggleBtn">
-            Boosters 2.5x
+            Boosters 2.5x / free 5x
           </button>
 
           <div class="collector-info" id="boosterCountdown">
@@ -146,7 +146,11 @@
 
         <!-- Auto collector info -->
         <div class="auto-collector">
-          <div class="collector-info">
+          <button class="boosters-btn" id="autoCollectorToggleBtn">
+            Auto Collector / free 5x
+          </button>
+
+          <div class="collector-info" id="autoCollectorCountdown">
             <div class="collector-text">Auto-collector stars for 10 mn.</div>
             <div class="collector-progress">
               <span class="progress-text">41%</span>
@@ -164,22 +168,26 @@
         <!-- Bottom navigation -->
         <div class="bottom-nav">
           <div class="nav-item active" data-tab="earn">
-            <span class="nav-icon">⭐</span>
-            <span class="nav-text">Earn</span>
+            <span class="nav-icon">⛏️</span>
+            <span class="nav-text">Mine</span>
           </div>
           <div class="nav-item" data-tab="tasks">
-            <span class="nav-icon">📋</span>
+            <span class="nav-icon">📝</span>
             <span class="nav-text">Tasks</span>
           </div>
+          <div class="nav-item" data-tab="friends">
+            <span class="nav-icon">👥</span>
+            <span class="nav-text">Friends</span>
+          </div>
           <div class="nav-item" data-tab="upgrade">
-            <span class="nav-icon">💼</span>
+            <span class="nav-icon">📈</span>
             <span class="nav-text">Upgrade</span>
           </div>
           <div class="nav-item" data-tab="profile">
-            <span class="nav-icon">⚙️</span>
+            <span class="nav-icon">👤</span>
             <span class="nav-text">Profile</span>
           </div>
-        </div>
+
 
         <!-- Floating coins animation -->
         <div class="floating-coins" id="floatingCoins"></div>

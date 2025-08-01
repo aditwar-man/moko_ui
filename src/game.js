@@ -17,7 +17,7 @@ export class Game {
 
   init() {
     this.updateUI()
-    this.startAutoCollector()
+    // this.startAutoCollector()
   }
 
   startGameLoop() {
@@ -90,7 +90,6 @@ export class Game {
     const randIndex = Math.floor(Math.random() * rewardValues.length);
     const rewardValue = rewardValues[randIndex];
 
-    // 👉 Tambahkan klik handler
     reward.addEventListener('click', () => {
       this.collectReward(rewardValue, reward); // ⬅️ pastikan 'game' adalah instance yang punya method ini
       reward.remove();
@@ -98,7 +97,6 @@ export class Game {
 
     grid.appendChild(reward);
 
-    // Hapus reward yang tidak diklik
     setTimeout(() => reward.remove(), duration * 1000);
   }
 
