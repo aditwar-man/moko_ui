@@ -89,9 +89,24 @@ class App {
     // Reward items click
     document.querySelectorAll('.reward-item, .special-reward').forEach(item => {
       item.addEventListener('click', (e) => {
+        console.log(`CurrentTarget: ${e.currentTarget}`)
         const value = parseInt(e.currentTarget.dataset.value)
-        this.game.collectReward(value, e.currentTarget)
-        this.telegram.hapticFeedback('light')
+        const randValueReward = [
+          110,
+          330,
+          880,
+          385,
+          220,
+          352,
+          220,
+          275,
+          407,
+          110,
+        ]
+        const randomReward = randValueReward[Math.floor(Math.random() * randValueReward.length)];
+
+        this.game.collectReward(randomReward, e.currentTarget)
+        this.telegram.hapticFeedback('success')
         
         // Save progress after significant actions
         this.saveGameProgress()

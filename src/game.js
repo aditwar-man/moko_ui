@@ -1,14 +1,14 @@
 export class Game {
   constructor() {
-    this.totalCoins = 100580
-    this.totalStars = 770
+    this.totalCoins = 0
+    this.totalStars = 0
     this.currentLevelStars = 11855
-    this.targetLevelStars = 29000
+    this.targetLevelStars = 100000
     this.clickPower = 1
     this.level = 1
     this.autoCollectorActive = true
     this.autoCollectorTimeLeft = 600 // 10 minutes in seconds
-    this.boosterMultiplier = 1
+    this.boosterMultiplier = 2.5
     this.boosterTimeLeft = 0
     
     this.lastUpdate = Date.now()
