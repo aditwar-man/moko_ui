@@ -1,11 +1,12 @@
 :root {
   --default-bg-moko: #fff2d1;
+  --secondary-blue: #16377d;
   --primary-yellow: #fcba63;
   --secondary-orange: #FF8C42;
   --accent-blue: #4A90E2;
   --background-cream: #FFF4E6;
   --text-brown: #8B4513;
-  --reward-blue: #5DADE2;
+  --reward-blue: #3d75ff;
   --green-special: #58D68D;
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   --border-radius: 16px;
@@ -29,23 +30,25 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: var(--default-bg-moko);
-  height: 100vh;
+  background-image: url('/public/bg.png'); /* Pastikan path sesuai */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; /* UTUH, tidak dipotong */
+  background-color: #000; /* Tambahan jika ada ruang kosong */
   color: var(--text-brown);
   user-select: none;
   -webkit-user-select: none;
   -webkit-touch-callout: none;
   overflow: hidden;
-  
-  /* Telegram WebApp specific styles */
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   left: 0;
 }
+
 
 #app {
   height: 100vh;
@@ -86,28 +89,28 @@ body {
 }
 
 .coins-display {
-  background: var(--shadow);
+  background: #212121;
   padding: 5px 16px;
   border-radius: 25px;
   font-size: 18px;
   font-weight: 700;
-  color: var(--text-brown);
+  color: var(--tg-bg-color);
   box-shadow: var(--shadow);
-  border: 3px solid var(--default-bg-moko);
+  /* border: 3px solid var(--default-bg-moko); */
 }
 
 .stars-display {
     display: flex;
     align-items: center;
     gap: 3px;
-    background: var(--shadow);
+    background: #212121;
     padding: 3px 12px;
     border-radius: 25px;
     font-size: 18px;
     font-weight: 700;
-    color: var(--text-brown);
+    color: var(--tg-bg-color);
     box-shadow: var(--shadow);
-    border: 3px solid var(--default-bg-moko);
+    /* border: 3px solid var(--default-bg-moko); */
 }
 
 .star-icon {
@@ -296,10 +299,14 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
-  background-image: url('../public/bg.png');
+  background-image: url('../public/bg2.png'); /* perbaiki path */
+  background-size: cover; /* atau contain, sesuai kebutuhan */
+  background-repeat: no-repeat;
+  background-position: center center;
+  
   padding: 10px;
   border-radius: var(--border-radius);
-  border: 3px solid #4A90E2;
+  border: 3px solid var(--shadow);
   box-shadow: var(--shadow);
   flex: 1;
 }
@@ -550,7 +557,7 @@ body {
 
 .collector-text {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 2px;
 }
 
@@ -605,7 +612,8 @@ body {
 }
 
 .nav-item.active {
-  background: var(--primary-yellow);
+  background: var(--shadow);
+  border: 1px solid var(--secondary-blue);
   color: var(--text-brown);
 }
 
