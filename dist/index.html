@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Star Collector - Telegram Mini App</title>
+    <meta name="description" content="Collect stars and earn coins in this fun Telegram Mini App game!" />
+    <meta name="keywords" content="telegram, mini app, game, stars, coins, collector" />
+    <meta name="author" content="Star Collector Team" />
+    
+    <!-- Telegram Mini App specific meta tags -->
+    <meta name="telegram:card" content="app" />
+    <meta name="telegram:site" content="@your_bot_username" />
+    <meta name="telegram:title" content="Star Collector" />
+    <meta name="telegram:description" content="Collect stars and earn coins!" />
+    
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script type="module" crossorigin src="/assets/index-DEx5Z5em.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BU34hXYV.css">
+  </head>
+  <body>
+    <div id="app">
+      <div class="game-container">
+        <!-- Header with stats -->
+        <div class="header">
+          <div class="main-stats">
+            <div class="coins-display">
+              <span id="totalCoins">100,580</span>
+            </div>
+            <div class="stars-display">
+              <span class="star-icon">⭐</span>
+              <span id="totalStars">770</span>
+            </div>
+          </div>
+          
+          <div class="progress-section">
+            <div class="level-info">
+              <span class="star-icon">
+                <img src="public/bintang.jpeg" style="
+                    height: 20px;
+                    position: relative;
+                    position-area: bottom;
+                    display: flex;
+                " />
+              </span>
+              <span id="currentLevelStars">11,855</span>
+              <span class="progress-percent" id="progressPercent">41%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Character and main game area -->
+        <div class="main-game">
+          <div class="character-section">
+            <div class="character" id="character">
+              <img src="public/main_character.jpeg" style="height: 100%"/>
+              <!-- <div class="character-face">
+                <div class="eyes">
+                  <div class="eye"></div>
+                  <div class="eye"></div>
+                </div>
+                <div class="mouth"></div>
+                <div class="cheeks">
+                  <div class="cheek"></div>
+                  <div class="cheek"></div>
+                </div>
+              </div>
+              <div class="character-ears">
+                <div class="ear"></div>
+                <div class="ear"></div>
+              </div>
+              <div class="character-hat"></div>
+              <div class="character-backpack"></div> -->
+            </div>
+          </div>
+        <div id="init-data-value"></div>
+
+          <!-- Reward diamonds -->
+          <div class="rewards-grid">
+            <div class="reward-item" data-value="960">
+              <div class="diamond"></div>
+              <span class="reward-value">+960</span>
+            </div>
+            <div class="reward-item" data-value="9770">
+              <div class="diamond"></div>
+              <span class="reward-value">+9770</span>
+            </div>
+            <div class="reward-item" data-value="960">
+              <div class="diamond"></div>
+              <span class="reward-value">+960</span>
+            </div>
+            <div class="reward-item" data-value="862">
+              <div class="diamond"></div>
+              <span class="reward-value">+862</span>
+            </div>
+            <div class="reward-item" data-value="9770">
+              <div class="diamond"></div>
+              <span class="reward-value">+9770</span>
+            </div>
+            <div class="special-reward" data-value="9720">
+              <div class="special-diamond"></div>
+              <span class="reward-value">+9720</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Boosters section -->
+        <div class="boosters-section">
+          <div class="booster-stars">
+            <div class="booster-star active">
+              <span class="star-icon">⭐</span>
+              <span class="booster-text">+1</span>
+            </div>
+            <div class="booster-star">
+              <span class="star-icon">⭐</span>
+            </div>
+            <div class="booster-star">
+              <span class="star-icon">⭐</span>
+            </div>
+            <div class="booster-star">
+              <span class="star-icon">⭐</span>
+            </div>
+          </div>
+          <button class="boosters-btn" id="boostersBtn">
+            Boosters
+          </button>
+        </div>
+
+        <!-- Auto collector info -->
+        <div class="auto-collector">
+          <div class="collector-icon">
+            <div class="mini-character"></div>
+          </div>
+          <div class="collector-info">
+            <div class="collector-text">Auto-collector stars for 10 mn.</div>
+            <div class="collector-progress">
+              <span class="progress-text">41%</span>
+              <div class="mini-progress-bar">
+                <div class="mini-progress-fill"></div>
+              </div>
+              <span class="progress-detail">45.1%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- User info display -->
+        <div id="init-data-value"></div>
+
+        <!-- Bottom navigation -->
+        <div class="bottom-nav">
+          <div class="nav-item active" data-tab="earn">
+            <span class="nav-icon">⭐</span>
+            <span class="nav-text">Earn</span>
+          </div>
+          <div class="nav-item" data-tab="tasks">
+            <span class="nav-icon">📋</span>
+            <span class="nav-text">Tasks</span>
+          </div>
+          <div class="nav-item" data-tab="upgrade">
+            <span class="nav-icon">💼</span>
+            <span class="nav-text">Upgrade</span>
+          </div>
+          <div class="nav-item" data-tab="profile">
+            <span class="nav-icon">⚙️</span>
+            <span class="nav-text">Profile</span>
+          </div>
+        </div>
+
+        <!-- Floating coins animation -->
+        <div class="floating-coins" id="floatingCoins"></div>
+      </div>
+    </div>
+    
+    <!-- Make app globally accessible for debugging -->
+    <script>
+      window.addEventListener('load', () => {
+        console.log('🌟 Star Collector Mini App loaded!')
+        
+        // Debug info
+        if (window.Telegram?.WebApp) {
+          console.log('📱 Telegram WebApp detected:', window.Telegram.WebApp.version)
+        } else {
+          console.log('🔧 Running in demo mode')
+        }
+      })
+    </script>
+  </body>
+</html>
