@@ -8,7 +8,7 @@ export class Game {
     this.level = 1
     this.autoCollectorActive = true
     this.autoCollectorTimeLeft = 600 // 10 minutes in seconds
-    this.boosterMultiplier = 2.5
+    this.boosterMultiplier = 1
     this.boosterTimeLeft = 0
     
     this.lastUpdate = Date.now()
