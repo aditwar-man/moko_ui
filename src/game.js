@@ -51,6 +51,8 @@ export class Game {
       }
     }
 
+    this.spawnFallingReward()
+
     this.updateUI()
   }
 
@@ -69,6 +71,35 @@ export class Game {
     this.animateReward(element)
     
     this.updateUI()
+  }
+
+  spawnFallingReward() {
+    const reward = document.createElement('div');
+    reward.classList.add('reward-item');
+    reward.innerHTML = `<div class="diamond"></div>`;
+
+    const grid = document.querySelector('.rewards-grid');
+    const gridWidth = grid.clientWidth;
+    const randomLeft = Math.random() * (gridWidth - 40);
+    reward.style.left = `${randomLeft}px`;
+    const duration = Math.random() * 5 + 5;
+    reward.style.animationDuration = `${duration}s`;
+
+    // 👉 Random reward value
+    const rewardValues = [110, 330, 880, 385, 220, 352, 220, 275, 407, 110];
+    const randIndex = Math.floor(Math.random() * rewardValues.length);
+    const rewardValue = rewardValues[randIndex];
+
+    // 👉 Tambahkan klik handler
+    reward.addEventListener('click', () => {
+      this.collectReward(rewardValue, reward); // ⬅️ pastikan 'game' adalah instance yang punya method ini
+      reward.remove();
+    });
+
+    grid.appendChild(reward);
+
+    // Hapus reward yang tidak diklik
+    setTimeout(() => reward.remove(), duration * 1000);
   }
 
   clickCharacter(element) {
