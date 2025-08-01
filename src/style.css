@@ -99,7 +99,7 @@ body {
 .stars-display {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 3px;
     background: var(--shadow);
     padding: 3px 12px;
     border-radius: 25px;
@@ -294,7 +294,7 @@ body {
 /* Rewards Grid */
 .rewards-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 8px;
   background: var(--reward-blue);
   padding: 10px;
@@ -329,8 +329,8 @@ body {
   height: 30px;
   background-image: url('../public/bintang.png');
   /* transform: rotate(45deg); */
-  border: 2px solid #DAA520;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  /* border: 2px solid #DAA520; */
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

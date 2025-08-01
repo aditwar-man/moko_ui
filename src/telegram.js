@@ -31,7 +31,7 @@ export class TelegramIntegration {
       // this.applyTelegramTheme()
       
       // Set up main button
-      this.setupMainButton()
+      // this.setupMainButton()
       
       // Set up back button handler
       this.setupBackButton()
