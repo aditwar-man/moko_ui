@@ -786,7 +786,7 @@ body {
 }
 
 /* Dark theme support */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background-cream: #2C1810;
     --text-brown: #F4E4BC;
@@ -801,7 +801,7 @@ body {
     background: rgba(44, 24, 16, 0.9);
     border-color: #5D4E37;
   }
-}
+} */
 
 /* Telegram WebApp specific styles */
 @supports (padding: max(0px)) {

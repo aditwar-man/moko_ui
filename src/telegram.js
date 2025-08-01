@@ -40,7 +40,7 @@ export class TelegramIntegration {
       this.tg.enableClosingConfirmation()
       
       // Display user info in the app
-      this.displayUserInfo()
+      // this.displayUserInfo()
       
       console.log('✅ Telegram Mini App initialized successfully!')
       
