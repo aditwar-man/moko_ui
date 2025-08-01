@@ -28,7 +28,7 @@ export class TelegramIntegration {
       this.configureApp()
       
       // Set up theme
-      this.applyTelegramTheme()
+      // this.applyTelegramTheme()
       
       // Set up main button
       this.setupMainButton()
